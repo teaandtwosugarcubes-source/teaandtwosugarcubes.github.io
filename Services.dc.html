@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Services — Spectrum Identity · Saviynt IGA Implementation, Governance &amp; Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="End-to-end Saviynt IGA services: implementation, application onboarding, identity lifecycle automation, access governance, IAM advisory and managed support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; background: #F0F0E8; color: #0A0A0A; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: #0B6E50; text-decoration: none; }
+    a:hover { color: #456C10; }
+    ::selection { background: #C5FD62; color: #0A0A0A; }
+  </style>
+</helmet>
+
+<!-- ══════════ NAV ══════════ -->
+<div data-screen-label="Nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(12,26,18,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(240,240,232,0.10)">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <a href="Home.dc.html" style="display: flex; align-items: center; flex-shrink: 0"><img src="assets/logo-white.png" alt="Spectrum Identity" style="height: 30px; display: block"></a>
+    <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; justify-content: flex-end">
+      <a href="Home.dc.html" style="font: 500 14px 'Inter', sans-serif; color: rgba(240,240,232,0.72)" style-hover="color: #3AFFB9">Home</a>
+      <a href="Services.dc.html" style="font: 500 14px 'Inter', sans-serif; color: #3AFFB9">Services</a>
+      <a href="Expertise.dc.html" style="font: 500 14px 'Inter', sans-serif; color: rgba(240,240,232,0.72)" style-hover="color: #3AFFB9">Expertise</a>
+      <a href="About.dc.html" style="font: 500 14px 'Inter', sans-serif; color: rgba(240,240,232,0.72)" style-hover="color: #3AFFB9">About</a>
+      <a href="Contact.dc.html" style="font: 500 14px 'Inter', sans-serif; color: rgba(240,240,232,0.72)" style-hover="color: #3AFFB9">Contact</a>
+      <a href="Contact.dc.html" style="font: 600 13px 'Space Grotesk', sans-serif; letter-spacing: 0.04em; color: #0A0A0A; background: #3AFFB9; padding: 11px 22px; border-radius: 999px" style-hover="background: #C5FD62; color: #0A0A0A">Start a conversation</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PAGE HEADER · Paper ══════════ -->
+<section data-screen-label="Page header" style="background: #F0F0E8; padding: 176px 0 72px; border-bottom: 1px solid rgba(10,10,10,0.08)">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
+    <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.18em; color: #456C10; margin: 0 0 18px">WHAT WE DO</p>
+    <h1 style="font: 600 clamp(38px, 5vw, 64px)/1.06 'Space Grotesk', sans-serif; letter-spacing: -0.025em; color: #0A0A0A; margin: 0 0 24px; max-width: 820px">End-to-end Saviynt IGA services</h1>
+    <p style="font: 400 17px/1.75 'Inter', sans-serif; color: #4A4E44; margin: 0; max-width: 680px">From architecture design to production deployment and ongoing operations — we deliver the full spectrum of identity services, with Saviynt Identity Cloud as the platform of choice.</p>
+  </div>
+</section>
+
+<!-- ══════════ SERVICES DETAIL · White ══════════ -->
+<section data-screen-label="Services detail" style="background: #FFFFFF; padding: 96px 0">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px">
+    <div id="implementation" style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 18px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+      <p style="font: 600 12.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: #0B6E50; margin: 0">01 — IMPLEMENTATION</p>
+      <h3 style="font: 600 22px/1.25 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">IGA implementation &amp; deployment</h3>
+      <p style="font: 400 15px/1.7 'Inter', sans-serif; color: #4A4E44; margin: 0; flex-grow: 1">Full-cycle Saviynt Identity Cloud deployment for complex enterprise environments — from requirements gathering and architecture design through to production go-live and post-deployment support. Covering SCIM integration, REST API, RBAC, ABAC, and dynamic birthright rules.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">SCIM</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">REST API</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">RBAC</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">ABAC</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">JML automation</span>
+      </div>
+    </div>
+    <div id="onboarding" style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 18px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+      <p style="font: 600 12.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: #0B6E50; margin: 0">02 — ONBOARDING</p>
+      <h3 style="font: 600 22px/1.25 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">Application onboarding &amp; connector development</h3>
+      <p style="font: 400 15px/1.7 'Inter', sans-serif; color: #4A4E44; margin: 0; flex-grow: 1">Connecting your critical business systems to Saviynt using native connectors, custom REST API integrations, SOAP, SCIM, and MuleSoft middleware. Covering HR systems, ERP platforms, cloud providers, SaaS applications, and custom enterprise systems.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Active Directory</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Entra ID</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">SAP SuccessFactors</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Workday</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Salesforce</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">ServiceNow</span>
+      </div>
+    </div>
+    <div id="lifecycle" style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 18px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+      <p style="font: 600 12.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: #0B6E50; margin: 0">03 — LIFECYCLE</p>
+      <h3 style="font: 600 22px/1.25 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">Identity lifecycle automation</h3>
+      <p style="font: 400 15px/1.7 'Inter', sans-serif; color: #4A4E44; margin: 0; flex-grow: 1">Designing and implementing joiner-mover-leaver processes driven by authoritative HR systems — ensuring access is provisioned accurately on day one, updated with every role change, and revoked completely upon departure. Includes dynamic user update rules and attribute-based provisioning.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Joiner-mover-leaver</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Birthright rules</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">HR integration</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Auto-provisioning</span>
+      </div>
+    </div>
+    <div id="governance" style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 18px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+      <p style="font: 600 12.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: #0B6E50; margin: 0">04 — GOVERNANCE</p>
+      <h3 style="font: 600 22px/1.25 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">Access governance &amp; compliance</h3>
+      <p style="font: 400 15px/1.7 'Inter', sans-serif; color: #4A4E44; margin: 0; flex-grow: 1">Implementing segregation-of-duties controls, scheduled certification campaigns, and access review workflows. Building actionable analytics for out-of-band access detection and high-risk entitlement monitoring — providing audit-ready compliance evidence.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">SoD controls</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Certification campaigns</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Access reviews</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Analytics</span>
+      </div>
+    </div>
+    <div id="advisory" style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 18px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+      <p style="font: 600 12.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: #0B6E50; margin: 0">05 — ADVISORY</p>
+      <h3 style="font: 600 22px/1.25 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">IAM architecture &amp; advisory</h3>
+      <p style="font: 400 15px/1.7 'Inter', sans-serif; color: #4A4E44; margin: 0; flex-grow: 1">Strategic IAM advisory — including maturity assessments, Zero Trust identity architecture design, IGA product evaluation, and roadmap development. We help organisations build identity programs that scale with business growth and evolving threat landscapes.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Zero Trust</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">IAM maturity</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">BPMN process design</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Architecture design</span>
+      </div>
+    </div>
+    <div id="operations" style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 18px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+      <p style="font: 600 12.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: #0B6E50; margin: 0">06 — OPERATIONS</p>
+      <h3 style="font: 600 22px/1.25 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">Managed support &amp; BAU operations</h3>
+      <p style="font: 400 15px/1.7 'Inter', sans-serif; color: #4A4E44; margin: 0; flex-grow: 1">Ongoing operational support for Saviynt environments — including incident resolution, configuration management, data refresh, UAT environment preparation, and knowledge transfer. We act as an extension of your team, keeping your IGA platform stable, current, and effective.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">BAU support</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Incident management</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">Knowledge transfer</span>
+        <span style="font: 500 12px 'Inter', sans-serif; color: #0B6E50; border: 1px solid rgba(11,110,80,0.35); border-radius: 999px; padding: 5px 13px">UAT preparation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CHALLENGES ══════════ -->
+<section data-screen-label="Challenges we solve" id="challenges">
+  <sc-if value="{{ challengesMist }}" hint-placeholder-val="{{ true }}">
+    <div style="background: #E9F8EF; padding: 108px 0">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
+        <div style="max-width: 720px; margin-bottom: 52px">
+          <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.18em; color: #0B6E50; margin: 0 0 18px">ENTERPRISE IDENTITY CHALLENGES</p>
+          <h2 style="font: 600 clamp(32px, 3.8vw, 48px)/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em; color: #0A0A0A; margin: 0 0 20px">The identity problems we solve.</h2>
+          <p style="font: 400 16.5px/1.75 'Inter', sans-serif; color: #4A4E44; margin: 0">Every organisation faces a spectrum of identity and access governance challenges. We help enterprises across the Nordics and EU diagnose and resolve these pain points — with precision, at enterprise scale.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Access sprawl &amp; orphaned accounts</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Unnecessary rights accumulating over time, and former employees' accounts left active — creating security risk and compliance exposure.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Manual provisioning bottlenecks</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">IT teams buried in manual access requests — slowing onboarding and introducing errors and security gaps in production.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Segregation-of-duties violations</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Conflicting privileges that open the door to fraud or error — critical in finance, procurement, and ERP environments like SAP and Workday.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Audit &amp; certification failures</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Inability to produce timely, accurate access reports during audits — resulting in findings, remediation effort, and reputational risk.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Third-party &amp; contractor risk</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">External identities managed ad hoc, without lifecycle controls or expiration policies — leaving persistent over-privileged accounts.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Multi-cloud &amp; hybrid complexity</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Identity fragmented across AD, Entra ID, AWS IAM, and SaaS — with no unified governance model or central visibility.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">GDPR &amp; NIS2 compliance gaps</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Lack of demonstrable access-control processes required under GDPR and NIS2 — exposing organisations to penalties and enforcement.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Complex application onboarding</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Legacy and modern systems that resist centralised IGA — non-standard APIs, bespoke data models, or missing native connectors.</p>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Immature role engineering</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">No structured RBAC or ABAC framework — excessive manual entitlements, policy drift, and no demonstrable least privilege.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ challengesForest }}" hint-placeholder-val="{{ false }}">
+    <div style="background: #0C1A12; padding: 108px 0">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
+        <div style="max-width: 720px; margin-bottom: 52px">
+          <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.18em; color: #3AFFB9; margin: 0 0 18px">ENTERPRISE IDENTITY CHALLENGES</p>
+          <h2 style="font: 600 clamp(32px, 3.8vw, 48px)/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em; color: #F0F0E8; margin: 0 0 20px">The identity problems we solve.</h2>
+          <p style="font: 400 16.5px/1.75 'Inter', sans-serif; color: rgba(240,240,232,0.7); margin: 0">Every organisation faces a spectrum of identity and access governance challenges. We help enterprises across the Nordics and EU diagnose and resolve these pain points — with precision, at enterprise scale.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Access sprawl &amp; orphaned accounts</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">Unnecessary rights accumulating over time, and former employees' accounts left active — creating security risk and compliance exposure.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Manual provisioning bottlenecks</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">IT teams buried in manual access requests — slowing onboarding and introducing errors and security gaps in production.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Segregation-of-duties violations</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">Conflicting privileges that open the door to fraud or error — critical in finance, procurement, and ERP environments like SAP and Workday.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Audit &amp; certification failures</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">Inability to produce timely, accurate access reports during audits — resulting in findings, remediation effort, and reputational risk.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Third-party &amp; contractor risk</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">External identities managed ad hoc, without lifecycle controls or expiration policies — leaving persistent over-privileged accounts.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Multi-cloud &amp; hybrid complexity</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">Identity fragmented across AD, Entra ID, AWS IAM, and SaaS — with no unified governance model or central visibility.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">GDPR &amp; NIS2 compliance gaps</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">Lack of demonstrable access-control processes required under GDPR and NIS2 — exposing organisations to penalties and enforcement.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Complex application onboarding</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">Legacy and modern systems that resist centralised IGA — non-standard APIs, bespoke data models, or missing native connectors.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(58,255,185,0.18); border-radius: 14px; padding: 26px 28px">
+            <h4 style="font: 600 16.5px 'Space Grotesk', sans-serif; color: #FFFFFF; margin: 0 0 8px">Immature role engineering</h4>
+            <p style="font: 400 14px/1.65 'Inter', sans-serif; color: rgba(240,240,232,0.65); margin: 0">No structured RBAC or ABAC framework — excessive manual entitlements, policy drift, and no demonstrable least privilege.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</section>
+
+<!-- ══════════ APPROACH · Paper ══════════ -->
+<section data-screen-label="Engagement approach" id="approach" style="background: #F0F0E8; padding: 108px 0">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
+    <div style="max-width: 720px; margin-bottom: 56px">
+      <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.18em; color: #456C10; margin: 0 0 18px">DELIVERY METHODOLOGY</p>
+      <h2 style="font: 600 clamp(32px, 3.8vw, 48px)/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em; color: #0A0A0A; margin: 0 0 20px">Our engagement approach.</h2>
+      <p style="font: 400 16.5px/1.75 'Inter', sans-serif; color: #4A4E44; margin: 0">A structured, transparent methodology — Agile sprint delivery combined with the rigour of enterprise architecture documentation — so every engagement produces measurable outcomes.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px">
+      <div style="border-top: 2px solid #0A0A0A; padding-top: 22px">
+        <div style="font: 600 40px/1 'Space Grotesk', sans-serif; color: #456C10; margin-bottom: 14px">1</div>
+        <h4 style="font: 600 17px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Discovery &amp; assessment</h4>
+        <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Requirements gathering, IAM maturity assessment, current-state analysis, business objectives and compliance obligations.</p>
+      </div>
+      <div style="border-top: 2px solid #0A0A0A; padding-top: 22px">
+        <div style="font: 600 40px/1 'Space Grotesk', sans-serif; color: #456C10; margin-bottom: 14px">2</div>
+        <h4 style="font: 600 17px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Architecture &amp; design</h4>
+        <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">BPMN-based process design, integration architecture, functional and technical specifications, stakeholder sign-off.</p>
+      </div>
+      <div style="border-top: 2px solid #0A0A0A; padding-top: 22px">
+        <div style="font: 600 40px/1 'Space Grotesk', sans-serif; color: #456C10; margin-bottom: 14px">3</div>
+        <h4 style="font: 600 17px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Implementation</h4>
+        <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Agile sprint delivery — connector development, workflow configuration, rule engineering, application onboarding.</p>
+      </div>
+      <div style="border-top: 2px solid #0A0A0A; padding-top: 22px">
+        <div style="font: 600 40px/1 'Space Grotesk', sans-serif; color: #456C10; margin-bottom: 14px">4</div>
+        <h4 style="font: 600 17px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Testing &amp; UAT</h4>
+        <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Rigorous testing cycles, UAT environment preparation, acceptance testing and defect resolution before production.</p>
+      </div>
+      <div style="border-top: 2px solid #0A0A0A; padding-top: 22px">
+        <div style="font: 600 40px/1 'Space Grotesk', sans-serif; color: #456C10; margin-bottom: 14px">5</div>
+        <h4 style="font: 600 17px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 8px">Deployment &amp; handover</h4>
+        <p style="font: 400 14px/1.65 'Inter', sans-serif; color: #4A4E44; margin: 0">Production go-live, operational guides, knowledge transfer sessions and hypercare support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA · Olive ══════════ -->
+<section data-screen-label="CTA band" style="background: #456C10; padding: 104px 0; text-align: center">
+  <div style="max-width: 880px; margin: 0 auto; padding: 0 32px">
+    <h2 style="font: 600 clamp(32px, 4vw, 52px)/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em; color: #F0F0E8; margin: 0 0 20px">Not sure where to start?</h2>
+    <p style="font: 400 17px/1.7 'Inter', sans-serif; color: rgba(240,240,232,0.78); margin: 0 auto 36px; max-width: 560px">Begin with an IAM maturity assessment — a structured view of your current state, gaps, and a prioritised roadmap.</p>
+    <a href="Contact.dc.html" style="display: inline-block; font: 600 16px 'Space Grotesk', sans-serif; color: #0A0A0A; background: #C5FD62; padding: 17px 38px; border-radius: 999px" style-hover="background: #B9FF3A; color: #0A0A0A">Request an assessment</a>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER · Ink ══════════ -->
+<footer data-screen-label="Footer" style="background: #0A0A0A; padding: 80px 0 36px">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(240,240,232,0.12)">
+      <div style="max-width: 320px">
+        <img src="assets/logo-white.png" alt="Spectrum Identity" style="height: 30px; display: block; margin-bottom: 20px">
+        <p style="font: 400 14px/1.7 'Inter', sans-serif; color: rgba(240,240,232,0.55); margin: 0 0 14px">Full-spectrum Saviynt IGA implementation and identity governance consultancy — headquartered in Espoo, Finland. Serving Nordic and EU enterprises.</p>
+        <p style="font: 500 11.5px 'Space Grotesk', sans-serif; letter-spacing: 0.14em; color: rgba(240,240,232,0.38); margin: 0">WHERE EVERY IDENTITY CONNECTS.</p>
+      </div>
+      <div>
+        <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.16em; color: rgba(240,240,232,0.45); margin: 0 0 18px">SERVICES</p>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a href="Services.dc.html#implementation" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">IGA implementation</a>
+          <a href="Services.dc.html#onboarding" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Application onboarding</a>
+          <a href="Services.dc.html#lifecycle" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Identity lifecycle</a>
+          <a href="Services.dc.html#governance" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Access governance</a>
+          <a href="Services.dc.html#advisory" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">IAM advisory</a>
+          <a href="Services.dc.html#operations" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Managed support</a>
+        </div>
+      </div>
+      <div>
+        <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.16em; color: rgba(240,240,232,0.45); margin: 0 0 18px">COMPANY</p>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a href="About.dc.html" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Leadership</a>
+          <a href="Expertise.dc.html" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Expertise &amp; certifications</a>
+          <a href="About.dc.html#clients" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Client experience</a>
+          <a href="About.dc.html#nordic" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Nordic focus</a>
+          <a href="Contact.dc.html" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.16em; color: rgba(240,240,232,0.45); margin: 0 0 18px">GET IN TOUCH</p>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a href="mailto:info@spectrumidentity.com" style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68)" style-hover="color: #C5FD62">info@spectrumidentity.com</a>
+          <p style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68); margin: 0">Espoo, Finland</p>
+          <p style="font: 400 14px 'Inter', sans-serif; color: rgba(240,240,232,0.68); margin: 0">Nordic Region &amp; European Union</p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 28px">
+      <p style="font: 400 13px 'Inter', sans-serif; color: rgba(240,240,232,0.4); margin: 0">© 2026 Spectrum Identity Oy. All rights reserved. Registered in Finland.</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap">
+        <span style="font: 600 11px 'Space Grotesk', sans-serif; letter-spacing: 0.08em; color: rgba(240,240,232,0.4); border: 1px solid rgba(240,240,232,0.16); border-radius: 999px; padding: 6px 14px">GDPR COMPLIANT</span>
+        <span style="font: 600 11px 'Space Grotesk', sans-serif; letter-spacing: 0.08em; color: rgba(240,240,232,0.4); border: 1px solid rgba(240,240,232,0.16); border-radius: 999px; padding: 6px 14px">SAVIYNT PARTNER</span>
+        <span style="font: 600 11px 'Space Grotesk', sans-serif; letter-spacing: 0.08em; color: rgba(240,240,232,0.4); border: 1px solid rgba(240,240,232,0.16); border-radius: 999px; padding: 6px 14px">ESPOO, FI</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;challengesSurface&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Mist&quot;, &quot;Forest dark&quot;], &quot;default&quot;: &quot;Mist&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Surfaces&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const surface = this.props.challengesSurface ?? 'Mist';
+    return {
+      challengesMist: surface === 'Mist',
+      challengesForest: surface === 'Forest dark'
+    };
+  }
+}
+</script>
+</body>
+</html>
