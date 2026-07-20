@@ -36,7 +36,7 @@
     a:not([style*="999px"]):active { opacity: .72; transform: translateY(1px); transition-duration: .04s; }
     a:not([style*="999px"]):focus-visible { outline: 2px solid #0B6E50; outline-offset: 2px; border-radius: 4px; }
     footer a:hover { color: #C5FD62 !important; text-decoration: none; }
-    a[style*="1.5px solid #0B6E50"]:hover { background: #0B6E50 !important; color: #FFFFFF !important; }
+    a[data-outline-btn]:hover, a[data-outline-btn]:hover * { background: #0B6E50 !important; color: #FFFFFF !important; }
     @keyframes sweep { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @keyframes si-spin { to { transform: rotate(360deg); } }
     @keyframes si-spin-rev { to { transform: rotate(-360deg); } }
@@ -253,7 +253,7 @@
         <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.18em; color: #0B6E50; margin: 0 0 18px">WHAT WE DO</p>
         <h2 style="font: 600 clamp(32px, 3.8vw, 48px)/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em; color: #0A0A0A; margin: 0">End-to-end Saviynt IGA services</h2>
       </div>
-      <a href="Services.dc.html" style="font: 600 15px 'Space Grotesk', sans-serif; color: #0B6E50; border: 1.5px solid #0B6E50; padding: 13px 26px; border-radius: 999px; white-space: nowrap" style-hover="background: #0B6E50; color: #FFFFFF">All services →</a>
+      <a href="Services.dc.html" data-outline-btn style="font: 600 15px 'Space Grotesk', sans-serif; color: #0B6E50; border: 1.5px solid #0B6E50; padding: 13px 26px; border-radius: 999px; white-space: nowrap" style-hover="background: #0B6E50; color: #FFFFFF">All services →</a>
     </div>
     <div style="border-top: 1px solid rgba(10,10,10,0.1)">
       <a href="Services.dc.html#implementation" style="display: grid; grid-template-columns: 72px 1fr auto; gap: 24px; align-items: center; padding: 26px 12px; border-bottom: 1px solid rgba(10,10,10,0.1); color: inherit" style-hover="background: #E9F8EF">
