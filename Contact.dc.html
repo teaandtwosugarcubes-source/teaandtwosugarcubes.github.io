@@ -139,6 +139,13 @@
         <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Message</span>
         <textarea ref="{{ messageRef }}" placeholder="Briefly describe your identity governance challenge or requirement…" style="width: 100%; box-sizing: border-box; min-height: 130px; resize: vertical; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px/1.6 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)"></textarea>
       </label>
+      <label style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 22px; cursor: pointer">
+        <input ref="{{ consentRef }}" type="checkbox" style="width: 18px; height: 18px; margin-top: 2px; accent-color: #0B6E50; flex-shrink: 0; cursor: pointer">
+        <span style="font: 400 13px/1.6 'Inter', sans-serif; color: #4A4E44">I consent to Spectrum Identity processing the details I have provided in order to respond to my enquiry, as described in the <a href="Privacy.dc.html" style="color: #0B6E50; font-weight: 600" style-hover="color: #456C10">Privacy Notice</a>.</span>
+      </label>
+      <sc-if value="{{ consentError }}" hint-placeholder-val="{{ false }}">
+        <p style="margin: -12px 0 16px; font: 500 12.5px 'Inter', sans-serif; color: #8A3B2E">Please confirm your consent before sending.</p>
+      </sc-if>
       <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
         <button onClick="{{ sendEnquiry }}" style="width: 100%; font: 600 16px 'Space Grotesk', sans-serif; letter-spacing: 0.02em; color: #0A0A0A; background: #C5FD62; border: none; border-radius: 999px; padding: 17px; cursor: pointer" style-hover="background: #B9FF3A">{{ buttonLabel }}</button>
       </sc-if>
@@ -192,7 +199,7 @@
       </div>
     </div>
     <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 28px">
-      <p style="font: 400 13px 'Inter', sans-serif; color: rgba(240,240,232,0.4); margin: 0">© 2026 Spectrum Identity Oy. All rights reserved. Registered in Finland.</p>
+      <p style="font: 400 13px 'Inter', sans-serif; color: rgba(240,240,232,0.4); margin: 0">© 2026 Spectrum Identity Oy. All rights reserved. Registered in Finland. · <a href="Privacy.dc.html" style="color: rgba(240,240,232,0.6)" style-hover="color: #C5FD62">Privacy Notice</a></p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap">
         <span style="font: 600 11px 'Space Grotesk', sans-serif; letter-spacing: 0.08em; color: rgba(240,240,232,0.4); border: 1px solid rgba(240,240,232,0.16); border-radius: 999px; padding: 6px 14px">GDPR COMPLIANT</span>
         <span style="font: 600 11px 'Space Grotesk', sans-serif; letter-spacing: 0.08em; color: rgba(240,240,232,0.4); border: 1px solid rgba(240,240,232,0.16); border-radius: 999px; padding: 6px 14px">SAVIYNT PARTNER</span>
@@ -206,7 +213,8 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { status: 'idle' }; // idle | sending | sent | failed
+    this.state = { status: 'idle', consentError: false }; // idle | sending | sent | failed
+    this.consentRef = React.createRef();
     this.fnameRef = React.createRef();
     this.lnameRef = React.createRef();
     this.emailRef = React.createRef();
@@ -226,21 +234,30 @@ class Component extends DCLogic {
       topic: val(this.topicRef),
       message: val(this.messageRef)
     };
+    const consented = this.consentRef.current ? this.consentRef.current.checked : false;
+    if (!consented) {
+      this.setState({ consentError: true });
+      return;
+    }
     if (!params.email || !params.fname) {
       if (this.emailRef.current && !params.email) this.emailRef.current.focus();
       else if (this.fnameRef.current) this.fnameRef.current.focus();
       return;
     }
-    this.setState({ status: 'sending' });
-    if (window.emailjs && window.emailjs.send) {
-      window.emailjs.send('service_n9xvq7e', 'template_g27p1qd', params).then(
-        () => this.setState({ status: 'sent' }),
-        () => this.setState({ status: 'failed' })
-      );
-    } else {
-      // EmailJS not loaded (offline preview) — show failure with mailto fallback
-      setTimeout(() => this.setState({ status: 'failed' }), 600);
-    }
+    this.setState({ status: 'sending', consentError: false });
+    const send = () => window.emailjs.send('service_n9xvq7e', 'template_g27p1qd', params).then(
+      () => this.setState({ status: 'sent' }),
+      () => this.setState({ status: 'failed' })
+    );
+    // Wait briefly for the EmailJS CDN script to finish loading before giving up
+    let waited = 0;
+    const attempt = () => {
+      if (window.emailjs && window.emailjs.send) { send(); return; }
+      waited += 300;
+      if (waited > 3000) { this.setState({ status: 'failed' }); return; }
+      setTimeout(attempt, 300);
+    };
+    attempt();
   };
 
   renderVals() {
@@ -251,6 +268,8 @@ class Component extends DCLogic {
       notSent: s !== 'sent',
       sent: s === 'sent',
       failed: s === 'failed',
+      consentError: this.state.consentError,
+      consentRef: this.consentRef,
       fnameRef: this.fnameRef,
       lnameRef: this.lnameRef,
       emailRef: this.emailRef,
