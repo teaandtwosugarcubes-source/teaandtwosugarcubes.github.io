@@ -102,28 +102,33 @@
     </div>
 
     <div style="background: #F0F0E8; border: 1px solid rgba(10,10,10,0.08); border-radius: 22px; padding: 40px">
-      <h3 style="font: 600 22px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 26px">Send an enquiry</h3>
+      <h3 style="font: 600 22px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0 0 6px">Send an enquiry</h3>
+      <p style="font: 400 13px 'Inter', sans-serif; color: #6E7169; margin: 0 0 24px">Fields marked <span style="color: #C0553F; font-weight: 600">*</span> are required.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px">
         <label style="display: block">
-          <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">First name</span>
-          <input ref="{{ fnameRef }}" type="text" placeholder="Maija" style="width: 100%; box-sizing: border-box; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+          <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">First name <span style="color: #C0553F">*</span></span>
+          <input type="text" placeholder="Maija" value="{{ fnameVal }}" onInput="{{ onFname }}" onBlur="{{ blurFname }}" style="{{ fnameStyle }}" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+          <sc-if value="{{ fnameErr }}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font: 500 12px/1.4 'Inter', sans-serif; color: #A0472F">{{ fnameErrMsg }}</p></sc-if>
         </label>
         <label style="display: block">
-          <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Last name</span>
-          <input ref="{{ lnameRef }}" type="text" placeholder="Virtanen" style="width: 100%; box-sizing: border-box; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+          <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Last name <span style="color: #C0553F">*</span></span>
+          <input type="text" placeholder="Virtanen" value="{{ lnameVal }}" onInput="{{ onLname }}" onBlur="{{ blurLname }}" style="{{ lnameStyle }}" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+          <sc-if value="{{ lnameErr }}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font: 500 12px/1.4 'Inter', sans-serif; color: #A0472F">{{ lnameErrMsg }}</p></sc-if>
         </label>
       </div>
       <label style="display: block; margin-bottom: 16px">
-        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Work email</span>
-        <input ref="{{ emailRef }}" type="email" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Work email <span style="color: #C0553F">*</span></span>
+        <input type="email" placeholder="you@company.com" value="{{ emailVal }}" onInput="{{ onEmail }}" onBlur="{{ blurEmail }}" style="{{ emailStyle }}" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+        <sc-if value="{{ emailErr }}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font: 500 12px/1.4 'Inter', sans-serif; color: #A0472F">{{ emailErrMsg }}</p></sc-if>
       </label>
       <label style="display: block; margin-bottom: 16px">
-        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Organisation</span>
-        <input ref="{{ orgRef }}" type="text" placeholder="Your organisation" style="width: 100%; box-sizing: border-box; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Organisation <span style="color: #C0553F">*</span></span>
+        <input type="text" placeholder="Your organisation" value="{{ orgVal }}" onInput="{{ onOrg }}" onBlur="{{ blurOrg }}" style="{{ orgStyle }}" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+        <sc-if value="{{ orgErr }}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font: 500 12px/1.4 'Inter', sans-serif; color: #A0472F">{{ orgErrMsg }}</p></sc-if>
       </label>
       <label style="display: block; margin-bottom: 16px">
-        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Topic</span>
-        <select ref="{{ topicRef }}" style="width: 100%; box-sizing: border-box; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
+        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Topic <span style="color: #C0553F">*</span></span>
+        <select value="{{ topicVal }}" onChange="{{ onTopic }}" onBlur="{{ blurTopic }}" style="{{ topicStyle }}" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)">
           <option value="">— Select a topic —</option>
           <option>New Saviynt IGA implementation</option>
           <option>Saviynt upgrade or migration</option>
@@ -134,29 +139,28 @@
           <option>IAM maturity assessment</option>
           <option>Other / general enquiry</option>
         </select>
+        <sc-if value="{{ topicErr }}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font: 500 12px/1.4 'Inter', sans-serif; color: #A0472F">{{ topicErrMsg }}</p></sc-if>
       </label>
       <label style="display: block; margin-bottom: 24px">
-        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Message</span>
-        <textarea ref="{{ messageRef }}" placeholder="Briefly describe your identity governance challenge or requirement…" style="width: 100%; box-sizing: border-box; min-height: 130px; resize: vertical; padding: 13px 16px; border: 1px solid rgba(10,10,10,0.15); border-radius: 10px; font: 400 14.5px/1.6 'Inter', sans-serif; color: #0A0A0A; background: #FFFFFF; outline: none" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)"></textarea>
+        <span style="display: block; font: 600 13px 'Inter', sans-serif; color: #35392F; margin-bottom: 7px">Message <span style="color: #C0553F">*</span></span>
+        <textarea placeholder="Briefly describe your identity governance challenge or requirement…" value="{{ messageVal }}" onInput="{{ onMessage }}" onBlur="{{ blurMessage }}" style="{{ messageStyle }}" style-focus="border-color: #0B6E50; box-shadow: 0 0 0 3px rgba(11,110,80,0.14)"></textarea>
+        <sc-if value="{{ messageErr }}" hint-placeholder-val="{{ false }}"><p style="margin: 6px 0 0; font: 500 12px/1.4 'Inter', sans-serif; color: #A0472F">{{ messageErrMsg }}</p></sc-if>
       </label>
       <label style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 22px; cursor: pointer">
-        <input ref="{{ consentRef }}" type="checkbox" style="width: 18px; height: 18px; margin-top: 2px; accent-color: #0B6E50; flex-shrink: 0; cursor: pointer">
+        <input type="checkbox" checked="{{ consentChecked }}" onChange="{{ onConsent }}" style="width: 18px; height: 18px; margin-top: 2px; accent-color: #0B6E50; flex-shrink: 0; cursor: pointer">
         <span style="font: 400 13px/1.6 'Inter', sans-serif; color: #4A4E44">I consent to Spectrum Identity processing the details I have provided in order to respond to my enquiry, as described in the <a href="Privacy.dc.html" style="color: #0B6E50; font-weight: 600" style-hover="color: #456C10">Privacy Notice</a>.</span>
       </label>
       <sc-if value="{{ consentError }}" hint-placeholder-val="{{ false }}">
         <p style="margin: -12px 0 16px; font: 500 12.5px 'Inter', sans-serif; color: #8A3B2E">Please confirm your consent before sending.</p>
       </sc-if>
       <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-        <button onClick="{{ sendEnquiry }}" style="width: 100%; font: 600 16px 'Space Grotesk', sans-serif; letter-spacing: 0.02em; color: #0A0A0A; background: #C5FD62; border: none; border-radius: 999px; padding: 17px; cursor: pointer" style-hover="background: #B9FF3A">{{ buttonLabel }}</button>
+        <button onClick="{{ sendEnquiry }}" disabled="{{ disabled }}" style="{{ buttonStyle }}" style-hover="{{ buttonHover }}">{{ buttonLabel }}</button>
       </sc-if>
       <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
         <div style="text-align: center; background: #E9F8EF; border: 1px solid rgba(11,110,80,0.3); border-radius: 14px; padding: 18px; font: 600 15px 'Inter', sans-serif; color: #0B6E50">Thank you — your enquiry has been received. We will be in touch shortly.</div>
       </sc-if>
       <sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}">
         <p style="margin: 14px 0 0; text-align: center; font: 500 13.5px/1.6 'Inter', sans-serif; color: #8A3B2E">Sending failed — please email us directly at <a href="mailto:info@spectrumidentity.com" style="color: #0B6E50; font-weight: 600">info@spectrumidentity.com</a></p>
-        <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
-          <p style="margin: 8px 0 0; text-align: center; font: 400 12px/1.5 'Inter', sans-serif; color: #A05244">Reason: {{ errorText }}</p>
-        </sc-if>
       </sc-if>
     </div>
   </div>
@@ -216,44 +220,63 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { status: 'idle', consentError: false, errorText: '' }; // idle | sending | sent | failed
-    this.consentRef = React.createRef();
-    this.fnameRef = React.createRef();
-    this.lnameRef = React.createRef();
-    this.emailRef = React.createRef();
-    this.orgRef = React.createRef();
-    this.topicRef = React.createRef();
-    this.messageRef = React.createRef();
+    this.state = {
+      status: 'idle', // idle | sending | sent | failed
+      fields: { fname: '', lname: '', email: '', org: '', topic: '', message: '' },
+      consent: false,
+      touched: {},
+      submitted: false
+    };
+  }
+
+  labels = { fname: 'First name', lname: 'Last name', email: 'Work email', org: 'Organisation', topic: 'Topic', message: 'Message' };
+
+  emailOk(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((v || '').trim()); }
+
+  errorFor(name, fields) {
+    const v = (fields[name] || '').trim();
+    if (!v) return this.labels[name] + ' is required.';
+    if (name === 'email' && !this.emailOk(v)) return 'Enter a valid email address (e.g. name@company.com).';
+    return '';
+  }
+
+  setField = (name) => (e) => {
+    const value = e.target.value;
+    this.setState((s) => ({ fields: Object.assign({}, s.fields, { [name]: value }) }));
+  };
+
+  markTouched = (name) => () => {
+    this.setState((s) => ({ touched: Object.assign({}, s.touched, { [name]: true }) }));
+  };
+
+  inputStyle(err, textarea) {
+    const border = err ? '#C0553F' : 'rgba(10,10,10,0.15)';
+    const base = "width: 100%; box-sizing: border-box; padding: 13px 16px; border: 1px solid " + border + "; border-radius: 10px; color: #0A0A0A; background: #FFFFFF; outline: none;";
+    return base + (textarea
+      ? " min-height: 130px; resize: vertical; font: 400 14.5px/1.6 'Inter', sans-serif;"
+      : " font: 400 14.5px 'Inter', sans-serif;");
+  }
+
+  onConsent = (e) => {
+    const checked = e.target.checked;
+    this.setState({ consent: checked });
+  };
+
+  isValid() {
+    const f = this.state.fields;
+    const names = ['fname', 'lname', 'email', 'org', 'topic', 'message'];
+    const allOk = names.every((n) => !this.errorFor(n, f));
+    return allOk && this.state.consent;
   }
 
   sendEnquiry = () => {
     if (this.state.status === 'sending') return;
-    const val = (ref) => (ref.current ? ref.current.value : '');
-    const params = {
-      fname: val(this.fnameRef),
-      lname: val(this.lnameRef),
-      email: val(this.emailRef),
-      org: val(this.orgRef),
-      topic: val(this.topicRef),
-      message: val(this.messageRef)
-    };
-    const consented = this.consentRef.current ? this.consentRef.current.checked : false;
-    if (!consented) {
-      this.setState({ consentError: true });
-      return;
-    }
-    if (!params.email || !params.fname) {
-      if (this.emailRef.current && !params.email) this.emailRef.current.focus();
-      else if (this.fnameRef.current) this.fnameRef.current.focus();
-      return;
-    }
-    this.setState({ status: 'sending', consentError: false });
-    const send = () => window.emailjs.send('service_n9xvq7e', 'template_g27p1qd', params).then(
+    if (!this.isValid()) { this.setState({ submitted: true }); return; }
+    const params = Object.assign({}, this.state.fields);
+    this.setState({ status: 'sending' });
+    const send = () => window.emailjs.send('service_n9xvq7e', 'template_g27p1qd', params, { publicKey: 'sGo7n9XgB38QnabQu' }).then(
       () => this.setState({ status: 'sent' }),
-      (err) => {
-        const txt = err && (err.text || err.message) ? (err.text || err.message) : JSON.stringify(err);
-        this.setState({ status: 'failed', errorText: (err && err.status ? '[' + err.status + '] ' : '') + txt });
-      }
+      () => this.setState({ status: 'failed' })
     );
     // Wait briefly for the EmailJS CDN script to finish loading before giving up
     let waited = 0;
@@ -268,23 +291,39 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state.status;
-    return {
+    const f = this.state.fields;
+    const showErr = (n) => (this.state.submitted || this.state.touched[n]);
+    const errMsg = (n) => (showErr(n) ? this.errorFor(n, f) : '');
+    const out = {
       sendEnquiry: this.sendEnquiry,
+      onConsent: this.onConsent,
+      consentChecked: this.state.consent,
       buttonLabel: s === 'sending' ? 'Sending…' : 'Send enquiry →',
       notSent: s !== 'sent',
       sent: s === 'sent',
       failed: s === 'failed',
-      hasError: s === 'failed' && !!this.state.errorText,
-      errorText: this.state.errorText,
-      consentError: this.state.consentError,
-      consentRef: this.consentRef,
-      fnameRef: this.fnameRef,
-      lnameRef: this.lnameRef,
-      emailRef: this.emailRef,
-      orgRef: this.orgRef,
-      topicRef: this.topicRef,
-      messageRef: this.messageRef
+      consentError: this.state.submitted && !this.state.consent
     };
+    const names = ['fname', 'lname', 'email', 'org', 'topic', 'message'];
+    const capMap = { fname: 'Fname', lname: 'Lname', email: 'Email', org: 'Org', topic: 'Topic', message: 'Message' };
+    names.forEach((n) => {
+      const cap = capMap[n];
+      const msg = errMsg(n);
+      out[n + 'Val'] = f[n];
+      out['on' + cap] = this.setField(n);
+      out['blur' + cap] = this.markTouched(n);
+      out[n + 'Err'] = !!msg;
+      out[n + 'ErrMsg'] = msg;
+      out[n + 'Style'] = this.inputStyle(!!msg, n === 'message');
+    });
+    const disabled = !this.isValid() || s === 'sending';
+    out.disabled = disabled;
+    out.buttonStyle = "width: 100%; font: 600 16px 'Space Grotesk', sans-serif; letter-spacing: 0.02em; border: none; border-radius: 999px; padding: 17px; transition: background 0.15s ease; "
+      + (disabled
+        ? "color: rgba(10,10,10,0.4); background: #D7DEC4; cursor: not-allowed;"
+        : "color: #0A0A0A; background: #C5FD62; cursor: pointer;");
+    out.buttonHover = disabled ? "background: #D7DEC4;" : "background: #B9FF3A;";
+    return out;
   }
 }
 </script>
