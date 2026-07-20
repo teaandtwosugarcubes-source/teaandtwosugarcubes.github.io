@@ -23,11 +23,54 @@
     a { color: #0B6E50; text-decoration: none; }
     a:hover { color: #456C10; }
     ::selection { background: #C5FD62; color: #0A0A0A; }
+    a[style*="border-radius: 999px"], button[style*="border-radius: 999px"] { transition: transform .16s cubic-bezier(.2,.7,.3,1), background-color .16s ease, color .16s ease, box-shadow .16s ease, border-color .16s ease, filter .16s ease; will-change: transform; }
+    a[style*="border-radius: 999px"]:hover, button[style*="border-radius: 999px"]:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(10,10,10,0.18); }
+    a[style*="border-radius: 999px"]:active, button[style*="border-radius: 999px"]:not(:disabled):active { transform: translateY(0) scale(.96); box-shadow: 0 3px 10px rgba(10,10,10,0.16); transition-duration: .05s; }
+    a[style*="border-radius: 999px"]:focus-visible, button[style*="border-radius: 999px"]:focus-visible { outline: 2px solid #0B6E50; outline-offset: 2px; }
+    button:disabled { transition: none; }
+    [data-screen-label="Nav"] a:not([style*="999px"]) { transition: color .22s ease, opacity .22s ease, transform .12s cubic-bezier(.2,.7,.3,1); }
+    [data-screen-label="Nav"] a:not([style*="999px"]):hover { color: #3AFFB9 !important; }
+    [data-screen-label="Nav"] a:not([style*="999px"]):active { transform: translateY(1px); opacity: .8; transition-duration: .04s; }
+    [data-screen-label="Nav"] a:not([style*="999px"]):focus-visible { outline: 2px solid rgba(58,255,185,.6); outline-offset: 3px; border-radius: 4px; }
+    a:not([style*="999px"]) { transition: color .2s ease, background-color .2s ease, opacity .18s ease, transform .12s cubic-bezier(.2,.7,.3,1), box-shadow .2s ease; }
+    a:not([style*="999px"]):active { opacity: .72; transform: translateY(1px); transition-duration: .04s; }
+    a:not([style*="999px"]):focus-visible { outline: 2px solid #0B6E50; outline-offset: 2px; border-radius: 4px; }
+    footer a:hover { color: #C5FD62 !important; text-decoration: none; }
+    a[style*="1.5px solid #0B6E50"]:hover { background: #0B6E50 !important; color: #FFFFFF !important; }
   </style>
+  <script>
+  (function(){
+    if (window.__revealInit) return; window.__revealInit = true;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var sel = 'section h1, section h2, section h3, section > div > p, [style*="border-radius: 18px"], [style*="border-radius: 14px"], [style*="border-left: 2px"], [style*="border-top: 2px"]';
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    function process(){
+      var els = document.querySelectorAll(sel), n = 0;
+      for (var i=0;i<els.length;i++){
+        var el = els[i];
+        if (el.__rev) continue; el.__rev = true;
+        var r = el.getBoundingClientRect();
+        if (r.top <= window.innerHeight * 0.94) continue; // visible now: leave as-is (no flash)
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity .6s ease, transform .65s cubic-bezier(.2,.7,.3,1)';
+        el.style.transitionDelay = ((n % 5) * 0.05) + 's';
+        io.observe(el); n++;
+      }
+    }
+    function boot(){ process(); setTimeout(process, 450); setTimeout(process, 1100); }
+    if (document.readyState !== 'loading') boot(); else document.addEventListener('DOMContentLoaded', boot);
+  })();
+  </script>
 </helmet>
 
 <!-- ══════════ NAV ══════════ -->
-<div data-screen-label="Nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(12,26,18,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(240,240,232,0.10)">
+<div data-screen-label="Nav" role="navigation" aria-label="Primary" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(12,26,18,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(240,240,232,0.10)">
   <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
     <a href="Home.dc.html" style="display: flex; align-items: center; flex-shrink: 0"><img src="assets/logo-white.png" alt="Spectrum Identity" style="height: 30px; display: block"></a>
     <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; justify-content: flex-end">
@@ -132,7 +175,7 @@
       <div style="max-width: 460px">
         <p style="font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: 0.18em; color: #456C10; margin: 0 0 18px">CREDENTIALS</p>
         <h2 style="font: 600 clamp(32px, 3.8vw, 48px)/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em; color: #0A0A0A; margin: 0 0 20px">Certified at the highest tier.</h2>
-        <p style="font: 400 16.5px/1.75 'Inter', sans-serif; color: #4A4E44; margin: 0">Saviynt IGA Advanced Professional is the top tier of Saviynt's certification program — held by only a small group of consultants across the EU. It sits alongside PAM, Pathlock and Azure credentials.</p>
+        <p style="font: 400 16.5px/1.75 'Inter', sans-serif; color: #4A4E44; margin: 0">Saviynt IGA Advanced Professional is the top tier of Saviynt's certification program — held by only a small group of consultants across the EU. It sits alongside PAM and Pathlock credentials.</p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
         <div style="background: #456C10; border-radius: 14px; padding: 22px 26px; display: flex; align-items: center; gap: 14px">
@@ -158,10 +201,6 @@
         <div style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 14px; padding: 22px 26px; display: flex; align-items: center; gap: 14px">
           <span style="width: 9px; height: 9px; border-radius: 50%; background: #0B6E50; flex-shrink: 0"></span>
           <p style="font: 500 15px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">Pathlock Cloud AAG Associate</p>
-        </div>
-        <div style="background: #FFFFFF; border: 1px solid rgba(10,10,10,0.1); border-radius: 14px; padding: 22px 26px; display: flex; align-items: center; gap: 14px">
-          <span style="width: 9px; height: 9px; border-radius: 50%; background: #0B6E50; flex-shrink: 0"></span>
-          <p style="font: 500 15px 'Space Grotesk', sans-serif; color: #0A0A0A; margin: 0">Microsoft Azure Fundamentals (AZ-900)</p>
         </div>
       </div>
     </div>
