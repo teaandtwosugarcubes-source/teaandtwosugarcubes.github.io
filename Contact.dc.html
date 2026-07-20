@@ -154,6 +154,9 @@
       </sc-if>
       <sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}">
         <p style="margin: 14px 0 0; text-align: center; font: 500 13.5px/1.6 'Inter', sans-serif; color: #8A3B2E">Sending failed — please email us directly at <a href="mailto:info@spectrumidentity.com" style="color: #0B6E50; font-weight: 600">info@spectrumidentity.com</a></p>
+        <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 8px 0 0; text-align: center; font: 400 12px/1.5 'Inter', sans-serif; color: #A05244">Reason: {{ errorText }}</p>
+        </sc-if>
       </sc-if>
     </div>
   </div>
@@ -213,7 +216,7 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { status: 'idle', consentError: false }; // idle | sending | sent | failed
+    this.state = { status: 'idle', consentError: false, errorText: '' }; // idle | sending | sent | failed
     this.consentRef = React.createRef();
     this.fnameRef = React.createRef();
     this.lnameRef = React.createRef();
@@ -247,7 +250,10 @@ class Component extends DCLogic {
     this.setState({ status: 'sending', consentError: false });
     const send = () => window.emailjs.send('service_n9xvq7e', 'template_g27p1qd', params).then(
       () => this.setState({ status: 'sent' }),
-      () => this.setState({ status: 'failed' })
+      (err) => {
+        const txt = err && (err.text || err.message) ? (err.text || err.message) : JSON.stringify(err);
+        this.setState({ status: 'failed', errorText: (err && err.status ? '[' + err.status + '] ' : '') + txt });
+      }
     );
     // Wait briefly for the EmailJS CDN script to finish loading before giving up
     let waited = 0;
@@ -268,6 +274,8 @@ class Component extends DCLogic {
       notSent: s !== 'sent',
       sent: s === 'sent',
       failed: s === 'failed',
+      hasError: s === 'failed' && !!this.state.errorText,
+      errorText: this.state.errorText,
       consentError: this.state.consentError,
       consentRef: this.consentRef,
       fnameRef: this.fnameRef,
